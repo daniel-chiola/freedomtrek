@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freedomtrek — Escursionismo in Abruzzo</title>
+  <meta name="description" content="Freedomtrek, associazione di promozione sociale escursionistica di Montesilvano (PE). Uscite in Abruzzo tra Gran Sasso, Majella e costa dei trabocchi.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/img/loghi/logo_freedomtrek.png">
+  <link rel="canonical" href="https://freedomtrek.it/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Freedomtrek">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Freedomtrek — Escursionismo in Abruzzo">
+  <meta property="og:description" content="Freedomtrek, associazione di promozione sociale escursionistica di Montesilvano (PE). Uscite in Abruzzo tra Gran Sasso, Majella e costa dei trabocchi.">
+  <meta property="og:url" content="https://freedomtrek.it/">
+  <meta property="og:image" content="https://freedomtrek.it/assets/img/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Freedomtrek — Escursionismo in Abruzzo">
+  <meta name="twitter:description" content="Freedomtrek, associazione di promozione sociale escursionistica di Montesilvano (PE). Uscite in Abruzzo tra Gran Sasso, Majella e costa dei trabocchi.">
+  <meta name="twitter:image" content="https://freedomtrek.it/assets/img/og-home.jpg">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="logo">
+          <img src="assets/img/loghi/logo_freedomtrek.png" alt="Freedomtrek" width="36" height="40">
+        </a>
+        <a href="index.html" class="brand-text">
+          <span class="brand-name">Freedomtrek</span>
+          <span class="brand-tagline">Associazione escursionistica</span>
+        </a>
+        <span class="affiliation">
+          <img src="assets/img/loghi/logo_fie.png" alt="Affiliati alla FIE, Federazione Italiana Escursionismo" width="28" height="32">
+        </span>
+      </div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Apri il menu di navigazione" aria-expanded="false">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="site-nav" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="index.html" class="is-active" aria-current="page">Home</a></li>
+          <li><a href="escursioni.html">Escursioni</a></li>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="diventa-socio.html">Diventa socio</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-media">
+        <img
+          src="assets/img/hero-1200.webp"
+          srcset="assets/img/hero-600.webp 600w, assets/img/hero-1200.webp 1200w, assets/img/hero-1800.webp 1800w"
+          sizes="100vw"
+          alt="Vista dall'alto su una cima rocciosa dell'Appennino abruzzese e la vallata sottostante"
+          width="1200"
+          height="1500"
+          fetchpriority="high">
+      </div>
+      <div class="container hero-content">
+        <h1>Le montagne d'Abruzzo, un passo alla volta</h1>
+        <p class="hero-subtitle">
+          Camminiamo insieme quasi ogni domenica: Gran Sasso, Majella, i
+          borghi dell'Appennino e la costa dei trabocchi. Non serve essere
+          esperti, serve avere voglia di uscire.
+        </p>
+        <div class="hero-actions">
+          <a href="escursioni.html" class="btn btn-primary">Vieni alla prossima uscita</a>
+          <a href="diventa-socio.html" class="link-underline">Diventa socio</a>
+        </div>
+      </div>
+      <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 C360,90 1080,0 1440,40 L1440,80 L0,80 Z"></path>
+      </svg>
+    </section>
+
+    <section class="section">
+      <div class="container home-highlights">
+        <div class="highlight-item">
+          <span class="dot dot--green" aria-hidden="true"></span>
+          <h2>Sempre accompagnati</h2>
+          <p>
+            Ogni uscita ha una guida davanti e una persona che chiude il
+            gruppo. Il passo lo detta chi va più piano, non chi va più forte.
+          </p>
+        </div>
+        <div class="highlight-item">
+          <span class="dot dot--blue" aria-hidden="true"></span>
+          <h2>Anche la prima volta</h2>
+          <p>
+            Segnaliamo per ogni percorso se è facile, medio o impegnativo,
+            così sai già prima se fa per te. Nel dubbio, scrivici.
+          </p>
+        </div>
+        <div class="highlight-item">
+          <span class="dot dot--primary" aria-hidden="true"></span>
+          <h2>Assicurazione inclusa</h2>
+          <p>
+            La quota da socio comprende la copertura assicurativa per tutte
+            le attività dell'associazione.
+          </p>
+        </div>
+
+        <!-- La prossima uscita in evidenza verrà popolata via JS
+             leggendo i dati delle escursioni. Nessun JSON ancora presente. -->
+        <div class="next-hike-card">
+          <span class="next-hike-label">Prossima uscita</span>
+          <div class="next-hike-details">
+            <p>Le prossime uscite in programma saranno pubblicate qui.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Freedomtrek — Montesilvano (PE)</p>
+      <ul class="footer-links">
+        <li><a href="mailto:freedomtrekaps23@gmail.com">Email</a></li>
+        <li><a href="https://www.instagram.com/freedomtrekaps/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100091580618209" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "Freedomtrek",
+    "alternateName": "Freedomtrek APS",
+    "url": "https://freedomtrek.it/",
+    "logo": "https://freedomtrek.it/assets/img/loghi/logo_freedomtrek.png",
+    "image": "https://freedomtrek.it/assets/img/loghi/logo_freedomtrek.png",
+    "email": "freedomtrekaps23@gmail.com",
+    "telephone": "+39 338 481 3915",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montesilvano",
+      "addressRegion": "PE",
+      "addressCountry": "IT"
+    },
+    "sameAs": [
+      "https://www.instagram.com/freedomtrekaps/",
+      "https://www.facebook.com/profile.php?id=100091580618209"
+    ],
+    "memberOf": {
+      "@type": "SportsOrganization",
+      "name": "FIE - Federazione Italiana Escursionismo"
+    }
+  }
+  </script>
+
+  <script>
+    document.getElementById('nav-toggle').addEventListener('change', function () {
+      this.setAttribute('aria-expanded', this.checked);
+    });
+  </script>
+
+</body>
+</html>
