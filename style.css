@@ -12,6 +12,7 @@
   --color-accent-blue-hover: #346C92;         /* azzurro scurito: testo hover/focus su sfondi chiari, 5.67:1 su bianco */
   --color-accent-blue-hover-on-dark: #92C3E3; /* azzurro schiarito: testo hover/focus su sfondi scuri, 5.55:1 su blu primario */
   --color-accent-green: #7CB342; /* verde logo: accenti, badge, dettagli */
+  --color-accent-red: #C0392B;   /* rosso: livello EE della scala CAI */
 
   --color-bg: #ffffff;
   --color-bg-alt: #eaf4fb;       /* azzurro molto tenue: sezioni in evidenza */
@@ -54,6 +55,7 @@
   --container-max: 72rem;
   --container-padding: var(--space-4);
   --radius: 0.25rem;
+  --photo-max-width: 480px; /* larghezza massima delle foto affiancate al testo, su desktop */
 
   /* --- Interazione --- */
   --transition-fast: 150ms ease;
@@ -469,6 +471,53 @@ input:focus-visible {
    In evidenza: come funziona + prossima escursione
    ========================================================= */
 
+/* Foto affiancata al testo: impilata a piena larghezza su mobile,
+   affiancata su desktop senza superare --photo-max-width. Ogni foto
+   applica anche una classe .photo-3-4 / .photo-narrow (o simile) per
+   il proprio aspect-ratio reale, senza tagli forzati. */
+.photo-pair {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.photo-pair-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.photo-pair-content {
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .photo-pair {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .photo-pair-photo {
+    flex: 0 1 33%;
+    max-width: var(--photo-max-width);
+  }
+
+  .photo-pair-content {
+    flex: 1;
+  }
+}
+
+.photo-3-4 {
+  aspect-ratio: 3 / 4;
+}
+
+.photo-narrow {
+  aspect-ratio: 594 / 1321;
+}
+
 .home-highlights {
   display: grid;
   gap: var(--space-6);
@@ -553,6 +602,23 @@ input:focus-visible {
 
 .next-hike-details strong {
   color: var(--color-primary);
+}
+
+.past-hikes-note {
+  padding-block: var(--space-5) var(--space-6);
+  text-align: center;
+}
+
+.past-hikes-note p {
+  max-width: 34rem;
+  margin-inline: auto;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.past-hikes-note a {
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 /* =========================================================
@@ -658,6 +724,142 @@ input:focus-visible {
   flex-direction: column;
 }
 
+.hike-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hike-card-date {
+  width: 3.5rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.hike-card-day {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.hike-card-month {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hike-card-body {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+.hike-card-title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-size-lg);
+}
+
+.hike-card-place {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.hike-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.hike-card-difficulty {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.hike-card-difficulty .dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hike-card .btn {
+  flex-shrink: 0;
+}
+
+.difficulty-legend {
+  margin-top: var(--space-7);
+}
+
+@media (min-width: 1024px) {
+  /* Qui la foto sta un po' più piccola che altrove: stessa variabile
+     di base, solo scalata verso il basso per questo punto specifico. */
+  .difficulty-legend .photo-pair-photo {
+    max-width: calc(var(--photo-max-width) * 0.75);
+  }
+}
+
+.difficulty-legend-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin: var(--space-5) 0 var(--space-6);
+}
+
+.difficulty-legend-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.difficulty-legend-list .dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-top: 0.35em;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot--t {
+  background-color: var(--color-accent-green);
+}
+
+.dot--e {
+  background-color: var(--color-accent-blue);
+}
+
+.dot--ee {
+  background-color: var(--color-accent-red);
+}
+
+.difficulty-legend-list strong {
+  display: block;
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+
+.difficulty-legend-list p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.difficulty-legend-note {
+  color: var(--color-text-muted);
+}
+
 .tip-box {
   background-color: var(--color-bg-alt);
   border-radius: var(--radius);
@@ -672,6 +874,11 @@ input:focus-visible {
 
 .tip-box p:last-child {
   margin-bottom: 0;
+}
+
+.section-footer-link {
+  margin: var(--space-6) 0 0;
+  text-align: center;
 }
 
 /* =========================================================

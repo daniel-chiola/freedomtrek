@@ -74,23 +74,77 @@
 
     <section class="section">
       <div class="container">
-        <!-- L'elenco viene popolato via JS leggendo escursioni.json,
-             ordinato per data. Nessun JSON ancora presente. -->
-        <div class="hike-list">
-          <p class="placeholder-note">
-            L'elenco completo delle escursioni in programma, con data,
-            luogo, ritrovo, durata e difficoltà, sarà pubblicato qui.
-          </p>
+        <!-- Elenco popolato via JS (escursioni.js) leggendo escursioni.json,
+             ordinato per data, solo uscite future. -->
+        <ul class="hike-list" id="hike-list-future"></ul>
+
+        <div class="difficulty-legend">
+          <h2>Scala delle difficoltà</h2>
+          <div class="photo-pair">
+            <img
+              class="photo-pair-photo photo-narrow"
+              src="assets/img/gallery/monte-aquila-07.webp"
+              alt="Escursionisti su un tratto roccioso gradinato durante una salita"
+              width="594"
+              height="1321"
+              loading="lazy">
+            <div class="photo-pair-content">
+              <ul class="difficulty-legend-list">
+                <li>
+                  <span class="dot dot--t" aria-hidden="true"></span>
+                  <div>
+                    <strong>T – Turistico</strong>
+                    <p>
+                      Passeggiate brevi su stradine, mulattiere o sentieri
+                      ampi. Pendenze minime, orientamento immediato.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span class="dot dot--e" aria-hidden="true"></span>
+                  <div>
+                    <strong>E – Escursionistico</strong>
+                    <p>
+                      Sentieri veri e propri su terreno vario, pietraie e
+                      pascoli. Possono esserci tratti ripidi, ma sono sempre
+                      ben segnalati e non richiedono capacità tecniche, solo
+                      un minimo di allenamento.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span class="dot dot--ee" aria-hidden="true"></span>
+                  <div>
+                    <strong>EE – Escursionisti Esperti</strong>
+                    <p>
+                      Itinerari con singoli passaggi rocciosi dove serve
+                      usare le mani, tratti esposti o pendii ripidi e
+                      scivolosi. Richiedono assenza di vertigini, passo
+                      sicuro e buona capacità di orientamento.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <p class="difficulty-legend-note">
+                Chi inizia parte da un'uscita T o E: le uscite EE non sono
+                adatte a chi non ha esperienza.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div class="tip-box">
           <p>
             <strong>Non sai da dove cominciare?</strong> Parti da un'uscita
-            segnata come <strong>facile</strong>: percorsi brevi, senza
-            tratti esposti, dove si cammina tranquilli. Se hai dubbi sulle
-            scarpe o sullo zaino, scrivici prima di iscriverti.
+            segnata come <strong>T</strong> o <strong>E</strong>: percorsi
+            accessibili anche senza esperienza. Se hai dubbi sulle scarpe o
+            sullo zaino, scrivici prima di iscriverti.
           </p>
         </div>
+
+        <p class="section-footer-link">
+          <a href="passate.html">Guarda dove siamo già stati</a>
+        </p>
       </div>
     </section>
 
@@ -141,6 +195,7 @@
       this.setAttribute('aria-expanded', this.checked);
     });
   </script>
+  <script src="escursioni.js" defer></script>
 
 </body>
 </html>

@@ -1,0 +1,42 @@
+[
+  {
+    "data": "2026-07-31",
+    "titolo": "Pizzo Cefalone",
+    "luogo": "Gran Sasso (AQ)",
+    "ritrovo": "Parcheggio Osservatorio astronomico",
+    "difficolta": "EE",
+    "dislivello": 538,
+    "km": 8.7,
+    "durata": "5h"
+  },
+  {
+    "data": "2026-08-01",
+    "titolo": "Santo Stefano di Sessanio - Rocca Calascio",
+    "luogo": "Santo Stefano di Sessanio (AQ)",
+    "ritrovo": "Parcheggio Santo Stefano di Sessanio",
+    "difficolta": "E",
+    "dislivello": 352,
+    "km": 10,
+    "durata": "4h"
+  },
+  {
+    "data": "2026-08-02",
+    "titolo": "Anello Fonte Vetica - M. Camicia - M. Tremoggia",
+    "luogo": "Gran Sasso, Fonte Vetica (AQ)",
+    "ritrovo": "Parcheggio Fonte Vetica",
+    "difficolta": "EE",
+    "dislivello": 1066,
+    "km": 8.5,
+    "durata": "5h"
+  },
+  {
+    "data": "2026-08-29",
+    "titolo": "Monte Sirente dallo Chalet",
+    "luogo": "Monte Sirente (AQ)",
+    "ritrovo": "Chalet del Sirente",
+    "difficolta": "EE",
+    "dislivello": 1142,
+    "km": 11,
+    "durata": "6h"
+  }
+]

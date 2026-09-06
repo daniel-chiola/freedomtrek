@@ -90,42 +90,58 @@
     </section>
 
     <section class="section">
-      <div class="container home-highlights">
-        <div class="highlight-item">
-          <span class="dot dot--green" aria-hidden="true"></span>
-          <h2>Sempre accompagnati</h2>
-          <p>
-            Ogni uscita ha una guida davanti e una persona che chiude il
-            gruppo. Il passo lo detta chi va più piano, non chi va più forte.
-          </p>
-        </div>
-        <div class="highlight-item">
-          <span class="dot dot--blue" aria-hidden="true"></span>
-          <h2>Anche la prima volta</h2>
-          <p>
-            Segnaliamo per ogni percorso se è facile, medio o impegnativo,
-            così sai già prima se fa per te. Nel dubbio, scrivici.
-          </p>
-        </div>
-        <div class="highlight-item">
-          <span class="dot dot--primary" aria-hidden="true"></span>
-          <h2>Assicurazione inclusa</h2>
-          <p>
-            La quota da socio comprende la copertura assicurativa per tutte
-            le attività dell'associazione.
-          </p>
-        </div>
+      <div class="container photo-pair">
+        <img
+          class="photo-pair-photo photo-3-4"
+          src="assets/img/gallery/monte-aquila-01.webp"
+          alt="Il gruppo Freedomtrek in fila su un sentiero di cresta del Gran Sasso"
+          width="960"
+          height="1280"
+          loading="lazy">
 
-        <!-- La prossima uscita in evidenza verrà popolata via JS
-             leggendo i dati delle escursioni. Nessun JSON ancora presente. -->
-        <div class="next-hike-card">
-          <span class="next-hike-label">Prossima uscita</span>
-          <div class="next-hike-details">
-            <p>Le prossime uscite in programma saranno pubblicate qui.</p>
+        <div class="home-highlights photo-pair-content">
+          <div class="highlight-item">
+            <span class="dot dot--green" aria-hidden="true"></span>
+            <h2>Sempre accompagnati</h2>
+            <p>
+              Ogni uscita ha una guida davanti e una persona che chiude il
+              gruppo. Il passo lo detta chi va più piano, non chi va più forte.
+            </p>
+          </div>
+          <div class="highlight-item">
+            <span class="dot dot--blue" aria-hidden="true"></span>
+            <h2>Anche la prima volta</h2>
+            <p>
+              Segnaliamo per ogni percorso il livello di difficoltà (T, E o
+              EE), così sai già prima se fa per te. Nel dubbio, scrivici.
+            </p>
+          </div>
+          <div class="highlight-item">
+            <span class="dot dot--primary" aria-hidden="true"></span>
+            <h2>Assicurazione inclusa</h2>
+            <p>
+              La quota da socio comprende la copertura assicurativa per tutte
+              le attività dell'associazione.
+            </p>
+          </div>
+
+          <!-- La prossima uscita in evidenza verrà popolata via JS
+               leggendo i dati delle escursioni. Nessun JSON ancora presente. -->
+          <div class="next-hike-card">
+            <span class="next-hike-label">Prossima uscita</span>
+            <div class="next-hike-details">
+              <p>Le prossime uscite in programma saranno pubblicate qui.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <div class="container past-hikes-note">
+      <!-- Popolato via JS (escursioni.js) leggendo escursioni.json:
+           frase con i luoghi delle ultime uscite passate + link. -->
+      <p id="past-hikes-teaser"></p>
+    </div>
 
   </main>
 
@@ -174,6 +190,7 @@
       this.setAttribute('aria-expanded', this.checked);
     });
   </script>
+  <script src="escursioni.js" defer></script>
 
 </body>
 </html>
