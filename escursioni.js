@@ -1,6 +1,8 @@
 /* Freedomtrek — rendering delle escursioni da escursioni.json.
-   Usato sia da escursioni.html (uscite future, con pulsante Iscriviti)
-   sia da passate.html (uscite passate, senza pulsante).
+   Usato sia da escursioni.html (uscite future) sia da passate.html
+   (uscite passate). L'iscrizione a una singola uscita avviene solo
+   tramite il gruppo WhatsApp dei soci: nessun pulsante o link esterno
+   per-uscita.
    Solo textContent per inserire testo: mai innerHTML. */
 (function () {
   'use strict';
@@ -33,7 +35,7 @@
     return span;
   }
 
-  function creaCard(uscita, opzioni) {
+  function creaCard(uscita) {
     var data = parseData(uscita.data);
 
     var li = document.createElement('li');
@@ -65,16 +67,6 @@
 
     corpo.appendChild(meta);
     li.appendChild(corpo);
-
-    if (opzioni.mostraIscriviti && uscita.urlModulo) {
-      var link = document.createElement('a');
-      link.className = 'btn btn-primary';
-      link.href = uscita.urlModulo;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.textContent = 'Iscriviti';
-      li.appendChild(link);
-    }
 
     return li;
   }
@@ -122,7 +114,7 @@
       return;
     }
     uscite.forEach(function (uscita) {
-      container.appendChild(creaCard(uscita, opzioni));
+      container.appendChild(creaCard(uscita));
     });
   }
 
@@ -151,14 +143,12 @@
             .filter(function (u) { return parseData(u.data) >= oggi; })
             .sort(function (a, b) { return parseData(a.data) - parseData(b.data); });
           popola(containerFuture, future, {
-            mostraIscriviti: true,
             messaggioVuoto: 'Nessuna uscita in programma al momento. Torna a trovarci presto.'
           });
         }
 
         if (containerPassate) {
           popola(containerPassate, passate, {
-            mostraIscriviti: false,
             messaggioVuoto: 'Non ci sono ancora escursioni passate da mostrare.'
           });
         }
