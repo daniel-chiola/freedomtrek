@@ -60,6 +60,8 @@
   /* --- Interazione --- */
   --transition-fast: 150ms ease;
   --touch-target: 44px;
+  --fade-in-duration: 300ms;  /* fade-in delle sezioni allo scroll, solo in index.html */
+  --fade-in-translate: 12px;
 }
 
 /* =========================================================
@@ -1050,5 +1052,34 @@ input:focus-visible {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
+  }
+}
+
+/* =========================================================
+   Fade-in delle sezioni allo scroll (solo index.html)
+
+   Lo stato nascosto (opacity 0, spostata in basso) si applica
+   solo quando lo script fade-in.js aggiunge .fade-in-ready al
+   body: se il JS non gira, .fade-section non ha mai opacity 0
+   di default e il contenuto resta visibile.
+   ========================================================= */
+
+body.fade-in-ready .fade-section {
+  opacity: 0;
+  transform: translateY(var(--fade-in-translate));
+}
+
+body.fade-in-ready .fade-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--fade-in-duration) ease-out,
+              transform var(--fade-in-duration) ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.fade-in-ready .fade-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
