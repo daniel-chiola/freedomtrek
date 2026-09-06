@@ -675,6 +675,39 @@ input:focus-visible {
   margin-bottom: var(--space-5);
 }
 
+.fie-content {
+  max-width: 34rem;
+  margin-inline: auto;
+}
+
+.fie-logo {
+  max-width: 6rem;
+  margin: 0 auto var(--space-6);
+}
+
+.fie-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.fie-list li {
+  position: relative;
+  padding-left: calc(1.25rem + var(--space-3));
+  color: var(--color-text);
+}
+
+.fie-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 1.25rem;
+  height: 2px;
+  background-color: var(--color-accent-green);
+}
+
 .card-grid {
   display: grid;
   gap: var(--space-6);
